@@ -1,0 +1,28 @@
+{
+  "name": "lucandjeremi-cli",
+  "version": "1.0.0",
+  "description": "A terminal CLI reader for lucandjeremi.substack.com",
+  "main": "index.js",
+  "bin": {
+    "lucandjeremi": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["substack", "cli", "newsletter", "reader", "terminal"],
+  "author": "Luca Caviness",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "axios": "^1.6.0",
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1",
+    "rss-parser": "^3.13.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
