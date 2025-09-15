@@ -1,7 +1,7 @@
 {
   "name": "lucandjeremi-cli",
   "version": "1.0.0",
-  "description": "A beautiful terminal CLI reader for lucandjeremi.substack.com newsletter",
+  "description": "A terminal CLI reader for lucandjeremi.substack.com newsletter",
   "main": "bin/cli.js",
   "bin": {
     "lucandjeremi": "./bin/cli.js"
@@ -24,7 +24,7 @@
   ],
   "author": {
     "name": "Luca Caviness",
-    "email": "your-email@example.com",
+    "email": "lucacaviness@gmail.com",
     "url": "https://github.com/lucaviness"
   },
   "license": "MIT",
