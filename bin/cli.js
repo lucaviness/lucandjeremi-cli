@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const { program } = require('commander');
 const inquirer = require('inquirer');
+const { version, name } = require('../package.json');
 
 // Import our enhanced styling components
 const { printBanner } = require('../src/banner');
@@ -24,9 +25,9 @@ function handleError(err, context = 'operation') {
 
 // Default action when no command is provided
 program
-  .name('lucandjeremi')
+  .name(name)
   .description('A terminal CLI reader for lucandjeremi.substack.com')
-  .version('2.0.0')
+  .version(version)
   .option('--no-color', 'disable colors')
   .action(async (options) => {
     try {
