@@ -14,10 +14,10 @@ npm link
 ## Use
 
 ```bash
-# Browse and read posts (shows beautiful banner!)
+# Browse and read posts
 lucandjeremi
 
-# Search posts with highlighted results
+# Search posts
 lucandjeremi search <term>
 
 # Show help
