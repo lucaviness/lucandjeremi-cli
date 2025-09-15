@@ -1,4 +1,4 @@
-# lucandjeremi-cli
+## lucandjeremi-cli
 
 Read lucandjeremi.substack.com in your terminal.
 
