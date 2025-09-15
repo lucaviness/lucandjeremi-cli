@@ -1,19 +1,46 @@
 {
   "name": "lucandjeremi-cli",
   "version": "1.0.0",
-  "description": "A terminal CLI reader for lucandjeremi.substack.com",
-  "main": "index.js",
+  "description": "A beautiful terminal CLI reader for lucandjeremi.substack.com newsletter",
+  "main": "bin/cli.js",
   "bin": {
     "lucandjeremi": "./bin/cli.js"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/cli.js",
+    "dev": "node --watch bin/cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm test"
   },
-  "keywords": ["substack", "cli", "newsletter", "reader", "terminal"],
-  "author": "Luca Caviness",
+  "keywords": [
+    "substack",
+    "cli",
+    "newsletter",
+    "reader",
+    "terminal",
+    "lucandjeremi",
+    "rss",
+    "blog"
+  ],
+  "author": {
+    "name": "Luca Caviness",
+    "email": "your-email@example.com",
+    "url": "https://github.com/lucaviness"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucaviness/lucandjeremi-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucaviness/lucandjeremi-cli/issues"
+  },
+  "homepage": "https://github.com/lucaviness/lucandjeremi-cli#readme",
+  "files": [
+    "bin/",
+    "README.md",
+    "package.json"
+  ],
   "dependencies": {
     "commander": "^11.1.0",
     "axios": "^1.6.0",
@@ -24,5 +51,6 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "preferGlobal": true
 }

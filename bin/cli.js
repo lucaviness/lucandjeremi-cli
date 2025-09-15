@@ -65,7 +65,9 @@ function formatText(text) {
 
 // Default action when no command is provided
 program
+  .name('lucandjeremi')
   .description('A terminal CLI reader for lucandjeremi.substack.com')
+  .version('1.0.0')
   .action(async () => {
     try {
       console.log(chalk.blue('Fetching posts from lucandjeremi.substack.com...'));
@@ -176,7 +178,16 @@ program
       console.log(chalk.blue(`Full post: ${selectedPost}`));
       
     } catch (error) {
-      console.error(chalk.red('Error reading post:'), error.message);
+      if (error.code === 'ENOTFOUND' || error.code === 'ECONNREFUSED') {
+        console.error(chalk.red('Network error: Could not connect to lucandjeremi.substack.com'));
+        console.error(chalk.gray('Please check your internet connection and try again.'));
+      } else if (error.message.includes('timeout')) {
+        console.error(chalk.red('Request timeout: The server took too long to respond'));
+        console.error(chalk.gray('Please try again in a moment.'));
+      } else {
+        console.error(chalk.red('Error reading post:'), error.message);
+      }
+      process.exit(1);
     }
   });
 
@@ -327,7 +338,16 @@ program
       }
       
     } catch (error) {
-      console.error(chalk.red('Error searching posts:'), error.message);
+      if (error.code === 'ENOTFOUND' || error.code === 'ECONNREFUSED') {
+        console.error(chalk.red('Network error: Could not connect to lucandjeremi.substack.com'));
+        console.error(chalk.gray('Please check your internet connection and try again.'));
+      } else if (error.message.includes('timeout')) {
+        console.error(chalk.red('Request timeout: The server took too long to respond'));
+        console.error(chalk.gray('Please try again in a moment.'));
+      } else {
+        console.error(chalk.red('Error searching posts:'), error.message);
+      }
+      process.exit(1);
     }
   });
 
